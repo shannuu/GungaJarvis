@@ -1,0 +1,29 @@
+#! /data/data/con.termux/files/usr/bin/bash
+wget -q --spider https://google.com
+case $? in
+0)
+cd $HOME
+echo -e '\e[33;1mLoading [         ]'
+apt-get update -y 2>&1 >/dev/null && apt-get upgrade -y 2>&1 >/dev/null
+sleep 3.0
+echo -e '\e[33;1mLoading [==>      ]'
+apt-get install apache2 scrypt wget python python2 ruby -y 2>&1 >/dev/null
+sleep 3.0
+echo -e '\e[33;1mLoading [=====>   ]'
+gem install lolcat 2>&1 > /dev/null
+sleep 3.0
+echo -e '\e[33;1mLoading [========>]'
+sleep 1.5
+echo -e '\n\e[32;1mInstalation completed\e[0m'
+;;
+*)
+sleep 2.0
+echo -e "\e[31;1m\nYou are not connected to internet"
+sleep 2.0
+echo -e "\e[31;1mPlease connect to the internet"
+sleep 2.0
+echo -e "\e[32;1mExiting\n"
+sleep 2.0
+exit 4
+;;
+esac
