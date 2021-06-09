@@ -1,0 +1,2 @@
+cd $HOME/GungaJarvis/utils
+bash main.sh
