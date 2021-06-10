@@ -1,4 +1,4 @@
 cd
-rm -rf GungaJarvis
-pkg install git -y
-git clone https://github.com/Shannuu/GungaJarvis
+rm -rf GungaJarvis > 2>&1 /dev/null
+pkg install git -y > 2>&1 /dev/null
+git clone https://github.com/Shannuu/GungaJarvis > 2>&1 /dev/null
