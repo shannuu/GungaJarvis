@@ -66,6 +66,8 @@ if [[ -e ngrok-stable-linux-arm.zip ]]; then #5
 echo -e 'Downloaded successfully'
 unzip ngrok-stable-linux-arm.zip
 chmod +x ngrok
+echo "authenticate your ngrok account, EXITING"
+exit 0
 else #5
 echo -e 'Error while downloading.........'
 sleep 3.0
