@@ -1,11 +1,20 @@
-#open websites - opens websites using "am start -a android.intent.action.VIEW -d https://something.com"
-#weather - shows weather using "curl http://wttr.in/SOME_CITY_NAME  
-#send mail - sends mail by smtp port (simple mail transfer protocol) by a python script
-#exit - exits a script by using "exit" command
+# INSTALLATION
 
-#Made by ~ Kushal Rajendra Kumar Borugadda
-#credentials -- Adith Kalada
-#if there are some issues or any ideas, send me a mail using my tool to gmail-"kushalborugadda2@gmail.com"
+1.  OPEN YOUR TERMUX.
 
-#Thankyou
-#Bye Bye 
+2.  PASTE THE WHOLE COMMAND `apt-get upgrade -y && apt-get update && pkg install git && git clone https://github.com/Shannuu/GungaJarvis`
+
+3.  IF YOU HAVE THOSE PACKAGES UPDATED THEN PASTE `git clone https://github.com/Shannu/GungaJarvis`
+
+
+# USAGE
+
+1. TO INSTALL THE REQUIRED PACKAGES `bash $HOME/GungaJarvis/setup`
+
+2. Start GungaJarvis `bash $HOME/GungaJarvis/GungaJarvis`
+
+
+
+# DONT'S
+
+1. DONT STOP THE GUNGAJARVIS WHEN IT IS IN PHISHING PROCESS. IF SO THEN YOUR FILES WOULD ME SHIFTED TO THE APACHE DIRECTORY WHICH IS `/data/data/com.termux/files/usr/share/apache2/default-site/htdocs`
