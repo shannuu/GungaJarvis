@@ -46,14 +46,9 @@ command -v wget > /dev/null 2>&1 || { echo >&2 "wget is required which is not in
 requirements
 
 check_ngrok() {
-cd $HOME/GungaJarvis/utils/phishing
-if [[ -f ngrok ]]; then #1
-echo ''
-else #1
-read -p $'Do you have your fully authenticated ngrok in your home directory [y/n]: ' check_ng
-if [[ $check_ng == 'y' ]]; then #2
 cd $HOME
-cp ngrok $HOME/GungaJarvis/utils/phishing
+if [[ -f ngrok ]]; then
+echo ''
 else
 read -p $'Do you want to download ngrok [y/n]: ' d_ngrok
 if [[ $d_ngrok == 'y' ]]; then #3
@@ -81,13 +76,8 @@ chmod +x ngrok
 else #6
 echo -e 'Error while downloading..........'
 exit 1
-fi #6
-fi #4
-else #3
-echo ''
-fi #3
-fi #2
-fi #1
+fi
+fi
 }
 check_ngrok
 
