@@ -51,13 +51,13 @@ if [[ -f ngrok ]]; then
 echo ''
 else
 read -p $'Do you want to download ngrok [y/n]: ' d_ngrok
-if [[ $d_ngrok == 'y' ]]; then #3
+   if [[ $d_ngrok == 'y' ]]; then #3
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
-if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then #4
+      if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then #4
 cd $HOME
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
-if [[ -e ngrok-stable-linux-arm.zip ]]; then #5
+         if [[ -e ngrok-stable-linux-arm.zip ]]; then #5
 echo -e 'Downloaded successfully'
 unzip ngrok-stable-linux-arm.zip
 chmod +x ngrok
@@ -70,12 +70,14 @@ exit 1
 fi #5
 else #4
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
-if [[ -e ngrok-stable-linux-386.zip ]]; then #6
+         if [[ -e ngrok-stable-linux-386.zip ]]; then #6
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x ngrok
 else #6
 echo -e 'Error while downloading..........'
 exit 1
+fi
+fi
 fi
 fi
 }
