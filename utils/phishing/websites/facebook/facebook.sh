@@ -83,7 +83,7 @@ check_ngrok
 
 start_server() {
 echo -e 'Starting server....'
-cd $HOME/GungaJarvis/utils/phishing
+cd $HOME
 ./ngrok http 3333 > /dev/null 2>&1 &
 sleep 5
 echo -e '\nNgrok started'
