@@ -8,7 +8,7 @@ echo -e '\e[33;1mLoading [         ]'
 apt-get update -y 2>&1 >/dev/null && apt-get upgrade -y 2>&1 >/dev/null
 sleep 3.0
 echo -e '\e[33;1mLoading [==>      ]'
-apt-get install apache2 scrypt python python2 ruby -y 2>&1 >/dev/null
+apt-get install apache2 scrypt python python2 ruby php -y 2>&1 >/dev/null
 sleep 3.0
 echo -e '\e[33;1mLoading [=====>   ]'
 gem install lolcat 2>&1 > /dev/null
