@@ -4,8 +4,7 @@ arr[1]='\nCaution: You cannot use a single server for many victims.\n\n'
 arr[2]='\nTip: You can use "short urls" to change your ngrok url.\n\n'
 arr[3]='\nCaution: Dont rename your files.\n\n'
 arr[4]='\nCaution: Dont move GungaJarvis to any other directory other than "home".\n\n'
-arr[5]='\nCaution: If you stop the tool in between, your files are stored in apache2 dir.\n\n'
-rand=$[ $RANDOM % 6 ]
+rand=$[ $RANDOM % 5 ]
 echo -e "${arr[$rand]}"
 sleep 2
 
@@ -41,35 +40,37 @@ cd $HOME
 if [[ -f ngrok ]]; then
 echo ''
 else
-read -p $'Do you want to download ngrok [y/n]: ' d_ngrok
-   if [[ $d_ngrok == 'y' ]]; then #3
-arch=$(uname -a | grep -o 'arm' | head -n1)
-arch2=$(uname -a | grep -o 'Android' | head -n1)
-      if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then #4
-cd $HOME
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
-         if [[ -e ngrok-stable-linux-arm.zip ]]; then #5
-echo -e 'Downloaded successfully'
-unzip ngrok-stable-linux-arm.zip
-chmod +x ngrok
-echo "authenticate your ngrok account, EXITING"
+echo "ngrok is not in your home directory, install it or move to your home directory"
 exit 0
-else #5
-echo -e 'Error while downloading.........'
-sleep 3.0
-exit 1
-fi #5
-else #4
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
-         if [[ -e ngrok-stable-linux-386.zip ]]; then #6
-unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
-chmod +x ngrok
-else #6
-echo -e 'Error while downloading..........'
-exit 1
-fi
-fi
-fi
+#read -p $'Do you want to download ngrok [y/n]: ' d_ngrok
+#   if [[ $d_ngrok == 'y' ]]; then #3
+#arch=$(uname -a | grep -o 'arm' | head -n1)
+#arch2=$(uname -a | grep -o 'Android' | head -n1)
+#      if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then #4
+#cd $HOME
+#wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
+#         if [[ -e ngrok-stable-linux-arm.zip ]]; then #5
+#echo -e 'Downloaded successfully'
+#unzip ngrok-stable-linux-arm.zip
+#chmod +x ngrok
+#echo "authenticate your ngrok account, EXITING"
+#exit 0
+#else #5
+#echo -e 'Error while downloading.........'
+#sleep 3.0
+#exit 1
+#fi #5
+#else #4
+#wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
+#         if [[ -e ngrok-stable-linux-386.zip ]]; then #6
+#unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
+#chmod +x ngrok
+#else #6
+#echo -e 'Error while downloading..........'
+#exit 1
+#fi
+#fi
+#fi
 fi
 }
 check_ngrok
