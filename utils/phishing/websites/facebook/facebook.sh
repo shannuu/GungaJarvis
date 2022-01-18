@@ -28,7 +28,6 @@ echo ''
 echo -e 'Ngrok stopped...'
 killall php
 echo -e 'Php stopped...'
-clear
 }
 
 requirements() {
