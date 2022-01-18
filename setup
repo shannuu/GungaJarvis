@@ -5,22 +5,22 @@ case $? in
 0)
 cd $HOME
 clear
-echo -e '\e[33;1mLoading [         ]'
+echo -e '\e[33;1mLoading [         ]    0%'
 sleep 2.0
 clear
 apt-get update -y && apt-get upgrade -y
 clear
-echo -e '\e[33;1mLoading [==>      ]'
+echo -e '\e[33;1mLoading [==>      ]    10%'
 sleep 2.0
 clear
 apt-get install scrypt python python2 ruby php -y
 clear
-echo -e '\e[33;1mLoading [=====>   ]'
+echo -e '\e[33;1mLoading [=====>   ]    90%'
 sleep 2.0
 clear
 gem install lolcat
 clear
-echo -e '\e[33;1mLoading [========>]'
+echo -e '\e[33;1mLoading [========>]    100%'
 sleep 2.0
 clear
 echo -e '\n\e[32;1mInstalation completed\e[0m'
