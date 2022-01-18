@@ -11,10 +11,8 @@
 
 1. TO INSTALL THE REQUIRED PACKAGES `bash $HOME/GungaJarvis/setup`
 
-2. Start GungaJarvis `bash $HOME/GungaJarvis/GungaJarvis`
+2.  To Start GungaJarvis `bash $HOME/GungaJarvis/GungaJarvis`
 
 
 
-# DONT'S
 
-1. DONT STOP THE GUNGAJARVIS WHEN IT IS IN PHISHING PROCESS. IF SO THEN YOUR FILES WOULD ME SHIFTED TO THE APACHE DIRECTORY WHICH IS `/data/data/com.termux/files/usr/share/apache2/default-site/htdocs`
