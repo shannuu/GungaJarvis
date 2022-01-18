@@ -124,7 +124,6 @@ cd $HOME/GungaJarvis/utils/phishing/websites/facebook
 while true
 do
 gmail_cleaner=$(wc -l < gmail.txt)
-echo $gmail_cleaner
 until [ $gmail_cleaner -le 50 ]
 do
 sed -i '1d' gmail.txt
