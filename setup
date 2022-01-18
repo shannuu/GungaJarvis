@@ -4,17 +4,25 @@ wget -q --spider https://google.com
 case $? in
 0)
 cd $HOME
+clear
 echo -e '\e[33;1mLoading [         ]'
-apt-get update -y 2>&1 >/dev/null && apt-get upgrade -y 2>&1 >/dev/null
-sleep 3.0
+sleep 2.0
+clear
+apt-get update -y && apt-get upgrade -y
+clear
 echo -e '\e[33;1mLoading [==>      ]'
-apt-get install scrypt python python2 ruby php -y 2>&1 >/dev/null
-sleep 3.0
+sleep 2.0
+clear
+apt-get install scrypt python python2 ruby php -y
+clear
 echo -e '\e[33;1mLoading [=====>   ]'
-gem install lolcat 2>&1 > /dev/null
-sleep 3.0
+sleep 2.0
+clear
+gem install lolcat
+clear
 echo -e '\e[33;1mLoading [========>]'
-sleep 1.5
+sleep 2.0
+clear
 echo -e '\n\e[32;1mInstalation completed\e[0m'
 ;;
 *)
