@@ -7,7 +7,7 @@ var=1
 until [[ $var == $rcount ]]; do
 rep=$(echo $list | cut -d " " -f $var)
 frep=$(echo $rep | tr '[:lower:]' '[:upper:]')
-if [[ $frep == "TEST" ]]; then
+if [[ $frep == "GUNGAJARVIS" ]]; then
 break
 exit
 fi
@@ -17,5 +17,6 @@ done
 repnamer
 rm -rf $rep > /dev/null 2>&1
 pkg install git -y > /dev/null 2>&1
+cd
 git clone https://github.com/Shannuu/GungaJarvis > /dev/null 2>&1
 echo "Done"
