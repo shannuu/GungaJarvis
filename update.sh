@@ -36,3 +36,5 @@ else
 repnamer
 fi
 }
+
+versionchecker
