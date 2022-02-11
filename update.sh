@@ -24,6 +24,7 @@ echo "Done"
 
 versionchecker(){
 cversion="0.0.0.1"
+cd ..
 git clone https://github.com/shannuu/gungajarvis/version
 version=$(cat version)
 if [[ $version == $cversion ]];then
@@ -35,6 +36,7 @@ fi
 else
 repnamer
 fi
+rm version
 }
 
 versionchecker
