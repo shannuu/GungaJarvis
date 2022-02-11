@@ -25,8 +25,8 @@ echo "Done"
 versionchecker(){
 cversion="0.0.0.1"
 cd ..
-git clone https://github.com/shannuu/GungaJarvis/blob/main/version.txt
-version=$(cat version)
+wget https://github.com/shannuu/GungaJarvis/blob/main/version/version.txt
+version=$(sed -n 1411p version.txt | cut -c 71-77)
 if [[ $version == $cversion ]];then
 echo
 read -p $"Your repo is already the latest version, Do you still want to update [y/n]:- " option
