@@ -13,10 +13,26 @@ exit
 fi
 ((var++))
 done
-}
-repnamer
 rm -rf $rep > /dev/null 2>&1
 pkg install git -y > /dev/null 2>&1
 cd
 git clone https://github.com/Shannuu/GungaJarvis > /dev/null 2>&1
 echo "Done"
+}
+
+
+
+versionchecker(){
+cversion="0.0.0.1"
+git clone https://github.com/shannuu/gungajarvis/version
+version=$(cat version)
+if [[ $version == $cversion ]];then
+echo
+read -p $"Your repo is already the latest version, Do you >
+if [[ $option == "y" ]] || [[ $option == "Y" ]]; then
+repnamer
+fi
+else
+repnamer
+fi
+}
