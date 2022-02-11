@@ -36,7 +36,7 @@ fi
 else
 repnamer
 fi
-rm version
+rm version.txt
 }
 
 versionchecker
