@@ -25,7 +25,7 @@ echo "Done"
 versionchecker(){
 cversion="0.0.0.1"
 cd ..
-git clone https://github.com/shannuu/gungajarvis/blob/main/version.txt
+git clone https://github.com/shannuu/GungaJarvis/blob/main/version.txt
 version=$(cat version)
 if [[ $version == $cversion ]];then
 echo
