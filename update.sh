@@ -28,7 +28,7 @@ git clone https://github.com/shannuu/gungajarvis/version
 version=$(cat version)
 if [[ $version == $cversion ]];then
 echo
-read -p $"Your repo is already the latest version, Do you >
+read -p $"Your repo is already the latest version, Do you still want to update [y/n]:- " option
 if [[ $option == "y" ]] || [[ $option == "Y" ]]; then
 repnamer
 fi
